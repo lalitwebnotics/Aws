@@ -1,0 +1,46 @@
+@import '../../style/common';
+
+/**
+ * Logout component
+ */
+.Logout {
+  padding-top: 70px;
+  transition: 0.4s opacity ease;
+
+  .main {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 35px 0 100px 0;
+    position: relative;
+  }
+
+  .Logo {
+    margin-bottom: 40px;
+  }
+
+  p {
+    line-height: rem(19px);
+  }
+
+  a {
+    color: $color-light-blue;
+    display: inline-block;
+  }
+
+  &.busy {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @include device-down(sm) {
+    .main {
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    .Logo {
+      margin-bottom: 20px;
+    }
+  }
+}

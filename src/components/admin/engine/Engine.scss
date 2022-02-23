@@ -1,0 +1,7 @@
+@import '../../../style/common';
+
+.Admin {
+  .Engine {
+    @include flex-grow;
+  }
+}

@@ -1,0 +1,26 @@
+.CertificatePopup  input[type=file]{
+    display: none;
+}
+
+.CertificatePopup {
+  .popup-content {
+    .Form {
+      .inputs {
+        .Upload {
+          margin-top: 15px;
+          margin-bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fa-upload{
+    cursor: pointer;
+}

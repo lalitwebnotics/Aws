@@ -1,0 +1,60 @@
+@import '../../../style/common';
+
+/**
+ * Radio component
+ */
+.Radio {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  .tick {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px $color-dark-grey solid;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: top;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: $color-light-blue;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0.2);
+      transition-duration: 0.2s;
+      transition-property: opacity, transform;
+      transition-timing-function: ease;
+      vertical-align: top;
+      margin-top: 4px;
+    }
+  }
+
+  .caption {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1px;
+    padding-left: 9px;
+  }
+
+  .wrap {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &.checked {
+    .tick::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

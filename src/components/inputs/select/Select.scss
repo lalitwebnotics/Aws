@@ -1,0 +1,60 @@
+@import '../../../style/common';
+
+/**
+ * Select component
+ */
+.Select {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px $color-light-grey solid;
+  position: relative;
+  cursor: pointer;
+
+  .label {
+    font-size: rem(12px);
+    line-height: rem(14px);
+    position: absolute;
+    transform: translate3d(0, -100%, 0);
+    top: -2px;
+    left: 0;
+    color: rgba($color-dark-grey, 0.5);
+  }
+
+  i {
+    align-self: center;
+    margin-left: 15px;
+  }
+
+  select {
+    display: inline-block;
+    flex-grow: 1;
+    border: 0;
+    outline: none;
+    height: 43px;
+    padding: 8px 0 10px 0;
+    margin: 0;
+    line-height: rem(19px);
+    color: $color-dark-grey;
+    appearance: none;
+    background-color: transparent;
+  }
+
+  i + input {
+    margin-left: 12px;
+  }
+
+  .caret {
+    font-size: rem(16px);
+    line-height: rem(16px);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    color: $color-dark-grey;
+  }
+
+  &.inline {
+    width: auto;
+  }
+}

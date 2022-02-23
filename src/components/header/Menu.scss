@@ -1,0 +1,186 @@
+@import '../../style/common';
+
+/**
+ * Menu component
+ */
+.Menu {
+  padding: 0 12px;
+  margin-right: 0;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-property: margin, padding;
+
+  .close {
+    display: none;
+    float: right;
+    color: $color-white;
+    cursor: pointer;
+  }
+
+  ul {
+    display: inline-block;
+  }
+
+  li {
+    float: right;
+    list-style: none;
+
+    a {
+      display: inline-block;
+      color: $color-white;
+      transition: 0.4s color ease;
+      padding: 12px 24px;
+
+      .expand & {
+        color: $color-dark-blue;
+      }
+    }
+
+    span {
+      display: inline-block;
+
+      &.badge {
+        width: 22px;
+        height: 22px;
+        color: $color-white;
+        background-color: $color-red;
+        border-radius: 50%;
+        font-size: rem(14px);
+        line-height: rem(19px);
+        text-align: center;
+        padding-top: 2px;
+        margin: 3px 0 0 11px;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 15px;
+      background-color: $color-light-grey;
+      vertical-align: middle;
+      margin-bottom: 2px;
+    }
+
+    &.menu-home {
+      display: none;
+    }
+
+    &.active {
+      a {
+        color: $color-red;
+      }
+
+      .expand & a {
+        color: $color-light-blue;
+      }
+    }
+
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .expand & {
+    padding: 15px 12px;
+    margin-right: 80px;
+  }
+
+  @include device-down(sm) {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+
+    .expand & {
+      padding: 0;
+      margin-right: 0;
+    }
+
+    .wrapper {
+      display: inline-block;
+      width: 327px;
+      height: 100%;
+      background-color: $color-dark-blue;
+    }
+
+    .close {
+      display: inline-block;
+      font-size: rem(40px);
+      line-height: rem(40px);
+      padding: 12px 16px 7px 16px;
+    }
+
+    ul {
+      @include clearfix;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      padding: 0 0 0 13px;
+
+      li {
+        display: block;
+        float: none;
+        font-size: rem(20px);
+        line-height: rem(27px);
+
+        a {
+          width: 100%;
+          padding-bottom: 14px;
+
+          .expand & {
+            color: $color-white;
+          }
+        }
+
+        span {
+          vertical-align: top;
+        }
+
+        &.menu-home {
+          display: block;
+        }
+
+        &.menu-logout {
+          order: 10;
+        }
+
+        &.active {
+          .expand & a {
+            color: $color-red;
+          }
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+      background-color: rgba($color-black, 0);
+      transition: 0.4s background-color ease;
+
+      .wrapper {
+        transform: translate3d(-100%, 0, 0);
+        transition: 0.4s transform ease;
+      }
+    }
+
+    &.open {
+      background-color: rgba($color-black, 0.67);
+
+      .wrapper {
+        transform: translate3d(0%, 0, 0);
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+/**
+ * Clearfix
+ */
+@mixin clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+/**
+ * Device breakpoint
+ */
+@mixin device($breakpoint) {
+  @if ($breakpoint == xs) {
+    @media (min-width: map-get($breakpoints, xs)) and (max-width: map-get($breakpoints, sm) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == sm) {
+    @media (min-width: map-get($breakpoints, sm)) and (max-width: map-get($breakpoints, md) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == md) {
+    @media (min-width: map-get($breakpoints, md)) and (max-width: map-get($breakpoints, lg) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == lg) {
+    @media (min-width: map-get($breakpoints, lg)) and (max-width: map-get($breakpoints, xl) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == xl) {
+    @media (min-width: map-get($breakpoints, xl)) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Device down
+ */
+@mixin device-down($breakpoint) {
+  @if ($breakpoint == xs) {
+    @media (max-width: map-get($breakpoints, sm) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == sm) {
+    @media (max-width: map-get($breakpoints, md) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == md) {
+    @media (max-width: map-get($breakpoints, lg) - 1) {
+      @content;
+    }
+  } @else if ($breakpoint == lg) {
+    @media (max-width: map-get($breakpoints, xl) - 1) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/**
+ * Device up
+ */
+@mixin device-up($breakpoint) {
+  @if ($breakpoint == xs) {
+    @media (min-width: map-get($breakpoints, xs)) {
+      @content;
+    }
+  } @else if ($breakpoint == sm) {
+    @media (min-width: map-get($breakpoints, sm)) {
+      @content;
+    }
+  } @else if ($breakpoint == md) {
+    @media (min-width: map-get($breakpoints, md)) {
+      @content;
+    }
+  } @else if ($breakpoint == lg) {
+    @media (min-width: map-get($breakpoints, lg)) {
+      @content;
+    }
+  } @else if ($breakpoint == xl) {
+    @media (min-width: map-get($breakpoints, xl)) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Ellipsis
+ */
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * Flex grow
+ */
+@mixin flex-grow {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/**
+ * Square
+ */
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}

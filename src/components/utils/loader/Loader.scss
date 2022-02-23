@@ -1,0 +1,19 @@
+@import '../../../style/common';
+
+/**
+ * Loader component
+ */
+.Loader {
+  @include square(20px);
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: 0.4s color ease;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../style/common';
+
+/**
+ * Filters
+ */
+.Admin {
+  .Filters {
+    padding: 0 30px 20px 30px;
+    display: flex;
+    flex-direction: row;
+
+    > *:not(.Popup) {
+      margin-right: 20px;
+    }
+
+    .keyword {
+      max-width: 300px;
+    }
+
+    .popup-trigger {
+      user-select: none;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  }
+}

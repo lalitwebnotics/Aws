@@ -1,0 +1,57 @@
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+  xs: 0px,
+  sm: 320px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+/**
+ * Color variables
+ */
+$color-accent-blue: #e6edf0;
+$color-black: #000000;
+$color-blue: #8eb3c7;
+$color-dark-blue: #152835;
+$color-dark-grey: #4f575f;
+$color-faint-blue: #fafbfb;
+$color-green: #8ed78c;
+$color-grey: #9b9b9b;
+$color-faded-yellow: #fefaf5;
+$color-light-blue: #6199b8;
+$color-light-grey: #d9d9d9;
+$color-lighter-grey: #ededed;
+$color-light-yellow: #fff4e9;
+$color-red: #cf2f37;
+$color-white: #ffffff;
+
+/**
+ * Font variables
+ */
+$font-family-bell-mt: 'Bell MT';
+$font-family-font-awesome: 'Font Awesome';
+$font-family-futura: 'Futura';
+$font-family-futura-condensed: 'Futura Condensed';
+
+$font-size-base: 14px;
+
+$font-style-normal: normal;
+$font-style-italic: italic;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-brands: 500;
+$font-weight-solid: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+/**
+ * Grid
+ */
+$grid-columns: 12;
+$grid-gutter: 30px;
+$grid-gutter-half: $grid-gutter / 2;

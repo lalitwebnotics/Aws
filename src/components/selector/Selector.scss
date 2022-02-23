@@ -1,0 +1,54 @@
+@import '../../style/common';
+
+/**
+ * Selector component
+ */
+.Selector {
+  position: relative;
+  cursor: pointer;
+
+  .selector-overlay {
+    position: absolute;
+    display: none;
+    text-align: left;
+    background-color: $color-white;
+    border-radius: 4px;
+    z-index: 99;
+    padding: 10px 0;
+    overflow-y: auto;
+    box-shadow: 1px 1px 5px rgba($color-black, 0.5);
+    min-width: 80px;
+    min-height: 80px;
+    cursor: default;
+
+    ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: block;
+      padding: 10px 16px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      transition-property: background-color, color;
+
+      &:hover,
+      &.active {
+        background-color: $color-dark-blue;
+        color: $color-white;
+      }
+    }
+  }
+
+  &.active {
+    .selector-overlay {
+      display: block;
+    }
+  }
+}

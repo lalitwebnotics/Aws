@@ -1,0 +1,181 @@
+/**
+ * Font awesome icons
+ */
+
+@mixin font-awesome($font-weight) {
+  display: inline-block;
+  font-family: $font-family-font-awesome;
+  font-style: normal;
+  font-weight: $font-weight;
+  transition-duration: 0.2s;
+  transition-property: color, opacity;
+  transition-timing-function: ease;
+
+  &::before {
+    display: inline-block;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.fa {
+  @include font-awesome($font-weight-regular);
+
+  &-camera::before {
+    content: '\f030';
+  }
+
+  &-check::before {
+    content: '\f00c';
+  }
+
+  &-chevron-double-left::before {
+    content: '\f323';
+  }
+
+  &-chevron-double-right::before {
+    content: '\f324';
+  }
+
+  &-chevron-down::before {
+    content: '\f078';
+  }
+
+  &-chevron-left::before {
+    content: '\f053';
+  }
+
+  &-chevron-right::before {
+    content: '\f054';
+  }
+
+  &-chevron-up::before {
+    content: '\f077';
+  }
+
+  &-ellipsis-v::before {
+    content: '\f142';
+  }
+
+  &-eye::before {
+    content: '\f06e';
+  }
+
+  &-eye-slash::before {
+    content: '\f070';
+  }
+
+  &-minus::before {
+    content: '\f068';
+  }
+
+  &-pen::before {
+    content: '\f304';
+  }
+
+  &-plus::before {
+    content: '\f067';
+  }
+
+  &-search::before {
+    content: '\f002';
+  }
+
+  &-spinner::before {
+    content: '\f110';
+  }
+
+  &-trash::before {
+    content: '\f1f8';
+  }
+
+  &-upload::before {
+    content: '\f093';
+  }
+
+  &-file::before {
+    content: '\f1c5';
+  }
+}
+
+.fab {
+  @include font-awesome($font-weight-brands);
+}
+
+.fal {
+  @include font-awesome($font-weight-light);
+
+  &-chevron-left::before {
+    content: '\f053';
+  }
+
+  &-chevron-right::before {
+    content: '\f054';
+  }
+
+  &-edit::before {
+    content: '\f044';
+  }
+
+  &-external-link::before {
+    content: '\f08e';
+  }
+
+  &-pdf-0::before {
+    content: '\f1c1';
+  }
+
+  &-times::before {
+    content: '\f00d';
+  }
+
+  &-trash::before {
+    content: '\f1f8';
+  }
+}
+
+.fas {
+  @include font-awesome($font-weight-solid);
+
+  &-bars::before {
+    content: '\f0c9';
+  }
+
+  &-caret-down::before {
+    content: '\f0d7';
+  }
+
+  &-caret-up::before {
+    content: '\f0d8';
+  }
+
+  &-check-circle::before {
+    content: '\f058';
+  }
+
+  &-exclamation-circle::before {
+    content: '\f06a';
+  }
+
+  &-plane::before {
+    content: '\f072';
+  }
+
+  &-sliders-v::before {
+    content: '\f3f1';
+  }
+
+  &-sort::before {
+    content: '\f0dc';
+  }
+
+  &-sort-down::before {
+    content: '\f0dd';
+  }
+
+  &-sort-up::before {
+    content: '\f0de';
+  }
+}

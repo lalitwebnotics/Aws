@@ -1,0 +1,126 @@
+@import '../../../style/common';
+
+/**
+ * Dropdown component
+ */
+.Dropdown {
+  user-select: none;
+  font-size: rem(18px);
+  line-height: rem(21px);
+  color: $color-dark-blue;
+  position: relative;
+
+  .dropdown-select {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    transition: 0.2s color ease;
+    padding: 19px 0 17px 0;
+    border-bottom: 1px $color-dark-blue solid;
+    position: relative;
+    min-height: 60px;
+
+    span {
+      @include ellipsis;
+      flex-grow: 1;
+    }
+
+    .arrow {
+      font-size: rem(24px);
+      margin: 2px 2px 0 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 50%;
+      bottom: -34px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 12px 15px 12px;
+      border-color: transparent transparent $color-white transparent
+    }
+  }
+
+  .dropdown-items {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    top: auto;
+    width: 100%;
+    background-color: $color-white;
+    border-radius: 6px;
+    margin-top: 33px;
+    padding: 16px 0 15px 0;
+
+    &.position-left {
+      left: 0;
+    }
+
+    &.position-right {
+      right: 0;
+    }
+
+    &.position-center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      transition-property: background-color, color;
+
+      span {
+        display: inline-block;
+        width: 100%;
+        padding: 11px 30px 12px 30px;
+      }
+
+      &:hover,
+      &.active {
+        background-color: $color-dark-blue;
+        color: $color-white;
+      }
+
+      &.disabled {
+        background-color: transparent;
+        color: $color-light-grey;
+        font-style: $font-style-italic;
+      }
+    }
+  }
+
+  &.no-value {
+    .dropdown-select {
+      color: $color-red;
+    }
+  }
+
+  &.active {
+    .dropdown-select {
+      color: $color-red;
+
+      &::after {
+        display: block;
+      }
+    }
+
+    .dropdown-items {
+      display: block;
+    }
+  }
+}

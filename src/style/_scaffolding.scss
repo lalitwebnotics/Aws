@@ -1,0 +1,17 @@
+/**
+ * Scaffolding
+ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body,
+#root {
+  @include flex-grow;
+}

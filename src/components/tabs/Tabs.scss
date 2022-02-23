@@ -1,0 +1,57 @@
+@import '../../style/common';
+
+/**
+ * Tabs component
+ */
+.Tabs {
+  border-bottom: 1px $color-light-grey solid;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    border-top: 4px transparent solid;
+    transition: 0.2s border-color ease;
+    margin-right: -1px;
+
+    a {
+      display: inline-block;
+      border-left: 1px transparent solid;
+      border-right: 1px transparent solid;
+      padding: 11px 28px 16px 29px;
+      transition: 0.2s border-color ease;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        border-top: 1px transparent solid;
+        transition: 0.2s border-color ease;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &.active {
+      border-top-color: $color-light-blue;
+
+      a {
+        border-color: $color-light-grey;
+
+        &::after {
+          border-color: $color-white;
+        }
+      }
+    }
+  }
+
+  @include device-down(sm) {
+    margin: 0 -30px;
+    padding: 0 30px;
+  }
+}

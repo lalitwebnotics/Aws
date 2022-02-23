@@ -1,0 +1,96 @@
+@import '../../../style/common';
+
+/**
+ * Text component
+ */
+.Text {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px $color-light-grey solid;
+  position: relative;
+  cursor: text;
+
+  .label {
+    font-size: rem(12px);
+    line-height: rem(14px);
+    position: absolute;
+    z-index: -1;
+    transform: translate3d(0, -100%, 0);
+    top: 0px;
+    left: 0;
+    color: rgba($color-dark-grey, 0.5);
+    cursor: pointer;
+  }
+
+  > .Icon {
+    align-self: center;
+    margin-left: 15px;
+  }
+
+  input {
+    display: inline-block;
+    flex-grow: 1;
+    border: 0;
+    outline: none;
+    height: 43px;
+    padding: 8px 0 6px 0;
+    margin: 0;
+    line-height: rem(19px);
+    color: $color-dark-grey;
+    background-color: transparent;
+    transition: 0.2s opacity ease;
+
+    &::placeholder {
+      color: rgba($color-dark-grey, 0.5);
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  i + input {
+    margin-left: 12px;
+  }
+
+  &.placeholder-label {
+    .label {
+      opacity: 1;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      transition-property: font-size, line-height, opacity, transform;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    &.empty {
+      .label {
+        opacity: 0;
+        transform: translate3d(0, 50%, 0);
+        font-size: rem(14px);
+        line-height: rem(19px);
+      }
+    }
+  }
+
+  &.inline {
+    width: auto;
+  }
+
+  &.with-border {
+    border: 1px $color-dark-grey solid;
+    border-radius: 4px;
+
+    input {
+      height: 39px;
+      border-radius: 4px;
+      margin-right: 11px;
+      padding-bottom: 10px;
+
+      &::placeholder {
+        color: $color-light-grey;
+      }
+    }
+  }
+}

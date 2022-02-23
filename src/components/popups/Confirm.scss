@@ -1,0 +1,43 @@
+@import '../../style/common';
+
+/**
+ * Confirm popup
+ */
+.Popup.Confirm {
+  .popup-content {
+    width: 450px;
+    padding: 47px 67px 41px 68px;
+    text-align: center;
+    color: $color-dark-grey;
+
+    p {
+      margin-bottom: 36px;
+    }
+  }
+
+  .buttons {
+    @include clearfix;
+
+    .cancel {
+      float: left;
+      width: 120px;
+    }
+
+    .ok {
+      float: right;
+    }
+
+    .btn-empty {
+      color: $color-light-blue;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.exclusive {
+      .ok {
+        float: none;
+        min-width: 190px;
+      }
+    }
+  }
+}

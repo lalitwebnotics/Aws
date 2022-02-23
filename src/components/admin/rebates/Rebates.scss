@@ -1,0 +1,25 @@
+@import '../../../style/common';
+
+.Admin {
+  .Rebate {
+    @include flex-grow;
+  }
+
+  .small-img{
+    max-width: 100px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+
+  .clear-all-btn{
+    width: 150px;
+  }
+
+  // Class
+  .visible {
+    display: block;
+  }
+  .invisible {
+    display: none;
+  }
+}

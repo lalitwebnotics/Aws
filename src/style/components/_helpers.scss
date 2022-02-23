@@ -1,0 +1,13 @@
+/**
+ * Helpers
+ */
+.clearfix {
+  @include clearfix;
+}
+
+/**
+ * None
+ */
+.none {
+  display: none;
+}

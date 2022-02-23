@@ -1,0 +1,48 @@
+@import '../../style/common';
+
+/**
+ * Breadcrumbs component
+ */
+.Breadcrumbs {
+  font-size: rem(12px);
+  padding: 18px 0 16px 0;
+  position: relative;
+  height: 50px;
+  min-width: 16px;
+
+  .Loader {
+    @include square(16px);
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 9px;
+
+    a {
+      display: inline-block;
+      color: $color-light-blue;
+
+      span {
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      i {
+        font-size: rem(10px);
+        color: $color-dark-blue;
+      }
+    }
+
+    &:last-child {
+      a i {
+        display: none;
+      }
+    }
+  }
+}

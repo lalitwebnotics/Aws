@@ -1,0 +1,38 @@
+@import '../../../style/common';
+
+.Admin {
+  .Aircraft {
+    @include flex-grow;
+  }
+  .AircraftMakeModelCsv {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 30px;
+    .Upload {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      p.upload-area-label {
+        margin-bottom: 0;
+      }
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 15px;
+      .save-btn {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-top: 5px;
+      }
+      .reset-btn {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import '../../style/common';
+
+/**
+ * AutoComplete component
+ */
+.AutoComplete {
+  position: relative;
+
+  .auto-complete-overlay {
+    position: absolute;
+    display: none;
+    text-align: left;
+    background-color: $color-white;
+    border-radius: 4px;
+    z-index: 99;
+    padding: 10px 0;
+    overflow-y: auto;
+    box-shadow: 1px 1px 5px rgba($color-black, 0.5);
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -1px;
+    cursor: default;
+  }
+
+  &.top {
+    .auto-complete-overlay {
+      top: auto;
+      bottom: 100%;
+      margin-top: 0px;
+    }
+  }
+
+  ul {
+    display: block;
+    transition: 0.4s opacity ease;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    padding: 10px 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-property: background-color, color;
+
+    &:hover,
+    &.active {
+      background-color: $color-dark-blue;
+      color: $color-white;
+    }
+  }
+
+  &.busy {
+    ul {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &.focus {
+    .auto-complete-overlay {
+      display: block;
+    }
+  }
+
+  &.empty {
+    .auto-complete-overlay {
+      display: none;
+    }
+  }
+}

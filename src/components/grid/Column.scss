@@ -1,0 +1,15 @@
+@import '../../style/common';
+
+/**
+ * Column component
+ */
+.Column {
+  float: left;
+  padding: 0 $grid-gutter-half;
+
+  @for $i from 1 through $grid-columns {
+    &.col-#{$i} {
+      width: #{($i / $grid-columns * 100)}#{'%'};
+    }
+  }
+}

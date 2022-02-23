@@ -1,0 +1,13 @@
+@import '../../style/mixins';
+
+/**
+ * App
+ */
+.App {
+  @include flex-grow;
+
+  .wrapper {
+    @include flex-grow;
+    min-height: 100%;
+  }
+}

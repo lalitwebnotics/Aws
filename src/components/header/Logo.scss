@@ -1,0 +1,65 @@
+@import '../../style/common';
+
+/**
+ * Logo
+ */
+.Logo {
+  display: inline-block;
+  font-family: $font-family-bell-mt;
+  text-align: center;
+  margin-top: 5px;
+  padding: 12px 28px;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-property: margin, padding;
+
+  > div {
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-property: color, font-size, line-height, margin, padding;
+  }
+
+  .top {
+    color: $color-white;
+    font-size: rem(24.1706px);
+    line-height: rem(27px);
+    letter-spacing: 0.1em;
+  }
+
+  .bottom {
+    color: $color-red;
+    font-size: rem(10.9866px);
+    line-height: rem(12px);
+    letter-spacing: 0.6em;
+    padding-left: 4px;
+    margin-top: 0;
+  }
+
+  .expand & {
+    margin-top: 0;
+    padding: 27px 108px;
+
+    .top {
+      color: $color-dark-blue;
+      font-size: rem(43.8389px);
+      line-height: rem(49px);
+    }
+
+    .bottom {
+      font-size: rem(19.9268px);
+      line-height: rem(22px);
+      padding-left: 6px;
+      margin-top: -2px;
+    }
+  }
+
+  @include device-down(sm) {
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .expand & {
+      padding: 27px 0;
+    }
+  }
+}

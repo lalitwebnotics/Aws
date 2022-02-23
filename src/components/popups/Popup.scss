@@ -1,0 +1,37 @@
+@import '../../style/common';
+
+/**
+ * Popup component
+ */
+.Popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  opacity: 0;
+  transition: 0.2s opacity ease;
+  background-color: rgba($color-black, 0.5);
+  user-select: none;
+
+  .popup-content {
+    background-color: $color-white;
+    transform: scale(0.9);
+    transition: 0.2s transform ease;
+    border-radius: 4px;
+    line-height: rem(23px);
+  }
+
+  &.active {
+    opacity: 1;
+
+    .popup-content {
+      transform: scale(1);
+    }
+  }
+}

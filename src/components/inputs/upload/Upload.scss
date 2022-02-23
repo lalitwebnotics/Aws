@@ -1,0 +1,24 @@
+/**
+ * Upload component
+ */
+.Upload {
+  display: block;
+  height: 100px;
+  border: 2px dashed #ccc;
+  position: relative;
+
+  .file {
+    display: none;
+  }
+}
+
+
+.dropzone .dz-image-preview{
+  display: inline-block;
+  margin-right: 10px;
+  max-width: 150px;
+}
+
+.dz-message{
+  cursor: pointer;
+}

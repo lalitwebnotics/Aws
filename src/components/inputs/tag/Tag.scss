@@ -1,0 +1,48 @@
+@import '../../../style/common';
+
+/**
+ * Tag
+ */
+.Tag {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px $color-light-grey solid;
+  position: relative;
+  cursor: text;
+
+  .label {
+    font-size: rem(12px);
+    line-height: rem(14px);
+    position: absolute;
+    z-index: -1;
+    transform: translate3d(0, -100%, 0);
+    top: 0px;
+    left: 0;
+    color: rgba($color-dark-grey, 0.5);
+    cursor: pointer;
+  }
+
+  .AutoComplete {
+    flex-grow: 1;
+
+    .Text {
+      border-bottom: 0;
+    }
+  }
+
+  .tag-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 11px 0 8px 0;
+  }
+
+  .value {
+    display: inline-block;
+    flex-grow: 1;
+  }
+
+  .remove {
+    display: inline-block;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,220 @@
+@import '../../style/common';
+// @import 'react-select/dist/css/react-select.css';
+
+
+/**
+ * Admin component
+ */
+.Admin {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 70px 0 30px 0;
+
+  .header {
+    padding: 18px 30px 0 30px;
+
+    h2 {
+      margin-bottom: 26px;
+    }
+  }
+
+  .main {
+    padding: 20px 0 0 0;
+  }
+
+  .sublinks {
+    padding: 0 30px 10px 30px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-right: 20px;
+    }
+
+    a {
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 2px transparent solid;
+      transition: 0.2s border-bottom-color ease;
+
+      &.active {
+        border-bottom-color: $color-blue;
+      }
+    }
+  }
+
+  .Popup.FormPopup {
+    .inputs {
+      padding: 50px 0 50px 0;
+
+      .no-margin {
+        margin-bottom: 0;
+      }
+
+      > label,
+      .form-row {
+        margin-bottom: 50px;
+        position: relative;
+
+        &.no-margin,
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.top-margin {
+          margin-top: 50px;
+        }
+      }
+
+      .form-row {
+        display: flex;
+        flex-direction: row;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        > div,
+        > label {
+          margin: 0 10px;
+          width: 50%;
+        }
+
+        &.contact {
+          margin-left: 0;
+          margin-right: 0;
+
+          > label {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    h5 {
+      padding: 30px 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .Table {
+    table-layout: fixed;
+
+    thead {
+      tr:first-child {
+        th {
+          &:first-child {
+            padding-left: 30px;
+            width: 54px;
+          }
+
+          &:last-child {
+            width: 68px;
+          }
+        }
+      }
+    }
+
+    .link{
+      cursor: pointer;
+      text-align: right;
+    }
+
+    tbody {
+      td {
+        > a {
+          color: $color-light-blue;
+        }
+
+        &.image-product {
+          span:sec {
+            text-align: right;
+            width: 16px;
+            padding-top: 13px;
+            cursor: pointer;
+          }
+
+          .Icon {
+            color: $color-dark-blue;
+            font-size: rem(16px);
+            line-height: rem(16px);
+            vertical-align: top;
+            cursor: pointer;
+          }
+        }
+
+        > .popup-trigger {
+          display: inline-block;
+          padding: 12px 20px 16px 0;
+          width: 100%;
+          height: 100%;
+          vertical-align: top;
+          cursor: pointer;
+          transition: 0.2s color ease;
+
+          .Icon {
+            opacity: 0;
+            transition: 0.2s opacity ease;
+            color: $color-light-blue;
+            font-size: rem(12px);
+            vertical-align: top;
+            margin: -2px 0 0 6px;
+          }
+
+
+          &:hover {
+            color: $color-blue;
+
+            .Icon {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:first-child {
+          padding-left: 30px;
+        }
+
+        &:last-child {
+          text-align: right;
+          padding-right: 30px;
+          padding-top: 5px;
+        }
+
+        &.no-padding {
+          padding: 0;
+          height: auto;
+        }
+
+        &.delete {
+          text-align: right;
+          padding-left: 20px;
+          width: 16px;
+          padding-top: 13px;
+
+          i {
+            color: $color-dark-blue;
+            font-size: rem(16px);
+            line-height: rem(16px);
+            vertical-align: top;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .action {
+        cursor: pointer;
+        color: $color-light-blue;
+        user-select: none;
+      }
+    }
+  }
+
+  .Paginate {
+    padding: 20px 30px 0 30px;
+  }
+}

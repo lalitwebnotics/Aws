@@ -1,0 +1,56 @@
+@import '../../style/common';
+
+/**
+ * Form Popup
+ */
+.Popup.FormPopup {
+  user-select: auto;
+
+  .popup-content {
+    width: 600px;
+    padding: 40px 30px 40px 30px;
+    color: $color-dark-grey;
+    max-height: calc(100% - 40px);
+  }
+
+  .Form {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+
+    h4 {
+      margin-bottom: 20px;
+    }
+
+    .inputs {
+      max-height: 100%;
+      overflow-y: auto;
+      margin-left: -20px;
+      margin-right: -20px;
+      padding: 30px 20px 30px 20px;
+    }
+  }
+
+  .buttons {
+    @include clearfix;
+    text-align: right;
+    position: relative;
+    padding-top: 20px;
+
+    .cancel {
+      width: 120px;
+    }
+
+    .save {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin-left: 20px;
+    }
+
+    .btn-empty {
+      color: $color-light-blue;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,205 @@
+@import '../../style/common';
+
+/**
+ * Table
+ */
+.Table {
+  flex-grow: 1;
+  position: relative;
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    transition: 0.2s opacity ease;
+  }
+
+  &.busy {
+    pointer-events: none;
+    user-select: none;
+
+    table {
+      opacity: 0.5;
+    }
+  }
+
+  thead {
+    font-size: rem(12px);
+    font-weight: $font-weight-medium;
+    line-height: rem(14px);
+    text-align: left;
+
+    .sort {
+      display: inline-block;
+      cursor: pointer;
+      vertical-align: top;
+      padding-bottom: 4px;
+      color: $color-dark-grey;
+
+      span {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 9px;
+        padding-top: 3px;
+      }
+
+      i {
+        font-size: rem(16px);
+        vertical-align: top;
+      }
+    }
+
+    .sort-selector {
+      display: inline-block;
+      height: 100%;
+      padding: 0 7px;
+
+      > span {
+        display: inline-block;
+        font-size: rem(14px);
+        line-height: rem(19px);
+        padding: 6px 10px 6px 13px;
+        margin-top: 16px;
+        transition: 0.2s background-color ease;
+        user-select: none;
+
+        > * {
+          vertical-align: top;
+        }
+
+        .Icon {
+          margin-left: 11px;
+          margin-top: 1px;
+        }
+      }
+
+      &.active {
+        > span {
+          background-color: rgba($color-dark-blue, 0.2);
+        }
+      }
+
+      .selector-overlay {
+        bottom: 0;
+        right: -1px;
+        transform: translate3d(0, 100%, 0);
+        border-radius: 0;
+        box-shadow: none;
+        border: 1px $color-dark-blue solid;
+        padding: 0;
+        font-size: rem(16px);
+        line-height: 21px;
+
+        li {
+          padding: 0;
+        }
+
+        a {
+          display: flex;
+          flex-direction: row;
+          padding: 10px 24px 12px 24px;
+          width: 100%;
+          color: $color-dark-blue;
+
+          span {
+            flex-grow: 1;
+          }
+
+          &:hover,
+          &.active {
+            background-color: $color-dark-blue;
+            color: $color-white;
+          }
+        }
+      }
+    }
+
+    th {
+      height: 40px;
+      font-weight: inherit;
+      position: relative;
+    }
+
+    tr {
+      &:first-child {
+        background-color: $color-blue;
+        color: $color-white;
+
+        .Checkbox {
+          position: absolute;
+          z-index: 1;
+          top: 12px;
+          white-space: nowrap;
+        }
+      }
+
+      &:last-child th {
+        border-bottom: 1px $color-light-grey solid;
+        height: 41px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      transition: 0.2s background-color ease;
+      background-color: $color-white;
+
+      &.odd {
+        background-color: rgba($color-dark-blue, 0.02);
+      }
+
+      &.active {
+        background-color: rgba($color-light-blue, 0.15);
+      }
+
+      &.selected {
+        background-color: $color-faded-yellow;
+      }
+
+      &:hover {
+        background-color: rgba($color-light-blue, 0.15);
+      }
+    }
+
+    td {
+      border-bottom: 1px $color-light-grey solid;
+      height: 45px;
+      padding: 8px 0;
+      vertical-align: top;
+      padding-top: 12px;
+    }
+  }
+
+  @include device-down(sm) {
+    thead {
+      .Checkbox {
+        font-size: rem(14px);
+        line-height: rem(19px);
+
+        .caption {
+          padding: 0 12px;
+        }
+      }
+
+      .sort {
+        i {
+          margin-top: 3px;
+        }
+      }
+
+      tr {
+        &:first-child {
+          .Checkbox {
+            top: 23px;
+          }
+        }
+
+        &:last-child {
+          th {
+            height: 61px;
+          }
+        }
+      }
+    }
+  }
+}

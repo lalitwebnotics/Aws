@@ -1,0 +1,32 @@
+@import '../../../style/common';
+
+.Admin {
+  .Manufacturer {
+    @include flex-grow;
+
+    .Popup.FormPopup {
+      .form-row {
+        &.contact {
+          margin-bottom: 30px;
+
+          .Select {
+            max-width: 160px;
+            margin-right: 20px;
+          }
+
+          .actions {
+            display: flex;
+            flex-direction: row;
+            padding-top: 10px;
+          }
+
+          .action {
+            margin-left: 20px;
+            color: inherit;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../../style/common';
+
+/**
+ * Toggle input
+ */
+.Toggle {
+  display: inline-block;
+  background-color: $color-grey;
+  border-radius: 15px;
+  padding: 2px 18px 2px 2px;
+  height: 20px;
+  transition-duration: 0.2s;
+  transition-property: background-color, opacity;
+  transition-timing-function: ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+
+  .tick {
+    display: inline-block;
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: 0.2s transform ease;
+    vertical-align: top;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: $color-white;
+      border-radius: 50%;
+      vertical-align: top;
+    }
+  }
+
+  &.active {
+    &.toggle-light-blue {
+      background-color: $color-light-blue;
+    }
+
+    &.toggle-green {
+      background-color: $color-green;
+    }
+
+    .tick {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  &.disabled,
+  &.active.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../style/common';
+
+/**
+ * Paginate component
+ */
+.Paginate {
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 6px;
+    transition: 0.2s opacity ease;
+    list-style: none;
+
+    a,
+    span {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+      transition-property: background-color, color;
+    }
+
+    &.active {
+      a,
+      span {
+        background-color: $color-blue;
+        color: $color-white;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .Icon {
+    font-size: rem(12px);
+  }
+}

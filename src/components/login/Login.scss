@@ -1,0 +1,83 @@
+@import '../../style/common';
+
+/**
+ * Login component
+ */
+.Login {
+  padding-top: 70px;
+
+  .main {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 35px 0;
+  }
+
+  .Logo {
+    margin-bottom: 52px;
+  }
+
+  .Form {
+    > label {
+      margin-bottom: 43px;
+
+      &.last {
+        margin-bottom: 29px;
+      }
+    }
+
+    .options {
+      padding-bottom: 50px;
+
+      .Column {
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+
+      a {
+        margin-top: 1px;
+      }
+    }
+  }
+
+  .buttons {
+    position: relative;
+    margin-bottom: 52px;
+    text-align: center;
+
+    .Alert {
+      width: 100%;
+    }
+  }
+
+  .Button {
+    width: 200px;
+  }
+
+  a {
+    color: $color-light-blue;
+    display: inline-block;
+  }
+
+  .foot {
+    a {
+      margin-left: 5px;
+    }
+  }
+
+  @include device-down(sm) {
+    .main {
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    .Logo {
+      margin-bottom: 20px;
+    }
+  }
+}

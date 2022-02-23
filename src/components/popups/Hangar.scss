@@ -1,0 +1,45 @@
+@import '../../style/common';
+
+/**
+ * Hangar popup
+ */
+.Popup.HangarPopup {
+  .popup-content {
+    padding-left: 56px;
+    padding-right: 56px;
+
+    p {
+      margin-bottom: 34px;
+    }
+  }
+
+  .selected-aircraft {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba($color-dark-blue, 0.02);
+    border-radius: 4px;
+    padding: 8px 19px 9px 17px;
+    margin-bottom: 40px;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-property: background-color, color;
+
+    span {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    a {
+      color: $color-blue;
+    }
+
+    .Icon {
+      font-size: rem(16px);
+    }
+
+    &.added {
+      background-color: $color-green;
+      color: $color-white;
+    }
+  }
+}

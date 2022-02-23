@@ -1,0 +1,30 @@
+@import '../../style/common';
+
+/**
+ * Header component
+ */
+.Header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: $color-dark-blue;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-property: height, background-color;
+
+  .Logo {
+    float: left;
+  }
+
+  .Menu {
+    float: right;
+  }
+
+  &.expand {
+    background-color: transparent;
+    height: 140px;
+  }
+}

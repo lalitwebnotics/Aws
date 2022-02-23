@@ -1,0 +1,113 @@
+@import '../../../style/common';
+
+/**
+ * Checkbox input
+ */
+.Checkbox {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  font-size: rem(14px);
+  transition: 0.2s opacity ease;
+
+  > span {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .tick {
+    width: 18px;
+    height: 18px;
+    background-color: $color-white;
+    color: $color-dark-blue;
+    border: 1px $color-dark-grey solid;
+    border-radius: 4px;
+    text-align: center;
+    transition-duration: 0.2s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: ease;
+    line-height: rem(16px);
+  }
+
+  .caption {
+    padding: 1px 14px 0 14px;
+  }
+
+  i {
+    vertical-align: top;
+    opacity: 0;
+    transform: scale(0.2);
+    transition-duration: 0.2s;
+    transition-property: opacity, transform;
+    transition-timing-function: ease;
+    font-size: rem(12px);
+  }
+
+  &.fit {
+    display: flex;
+    flex-direction: row;
+
+    .caption {
+      flex: 1 1;
+    }
+  }
+
+  &.checkbox-sm {
+    font-size: rem(12px);
+
+    .tick {
+      width: 16px;
+      height: 16px;
+    }
+
+    .caption {
+      padding: 1px 9px;
+    }
+  }
+
+  &.checkbox-xs {
+    font-size: rem(12px);
+    line-height: rem(14px);
+
+    .tick {
+      width: 11px;
+      height: 11px;
+      border-color: $color-black;
+      border-radius: 0;
+      padding-top: 1px;
+      margin-top: 2px;
+    }
+
+    .caption {
+      padding-left: 11px;
+    }
+
+    i {
+      font-size: rem(7px);
+      line-height: rem(7px);
+    }
+
+    &.active {
+      .tick {
+        border-color: $color-light-blue;
+      }
+    }
+  }
+
+  &.active {
+    .tick {
+      background-color: $color-light-blue;
+      color: $color-white;
+    }
+
+    i {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

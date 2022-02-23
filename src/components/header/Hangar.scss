@@ -1,0 +1,106 @@
+@import '../../style/common';
+
+/**
+ * Hangar component
+ */
+.Header {
+  .Hangar {
+    display: none;
+    color: $color-white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 33px;
+    height: 25px;
+    text-align: center;
+    padding-top: 8px;
+
+    .Icon {
+      font-size: rem(14px);
+      line-height: rem(14px);
+    }
+
+    .arch {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      span {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+
+        &::before,
+        &::after {
+          display: inline-block;
+          position: absolute;
+          content: '';
+          width: 3px;
+          height: 17px;
+          background-color: $color-white;
+          bottom: 0;
+        }
+
+        &.arch-left {
+          left: 0;
+
+          &::after {
+            transform: rotate(70deg);
+            bottom: auto;
+            top: -28px;
+            left: 7px;
+          }
+        }
+
+        &.arch-right {
+          right: 4px;
+
+          &::after {
+            transform: rotate(-70deg);
+            bottom: auto;
+            top: -28px;
+            right: 4px;
+          }
+        }
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      font-size: rem(14px);
+      line-height: rem(19px);
+      border-radius: 50%;
+      background-color: $color-red;
+      padding-top: 2px;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+    }
+
+    &:active,
+    &:focus,
+    .active {
+      color: $color-white;
+
+      .Icon {
+        color: $color-white;
+      }
+    }
+
+    @include device-down(sm) {
+      display: inline-block;
+      top: 18px;
+      right: 23px;
+
+      .badge {
+        top: -4px;
+        right: -10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+/**
+ * Size based to root tag
+ */
+@function rem($font-size, $base: $font-size-base) {
+  @return #{$font-size / $base}rem;
+}
